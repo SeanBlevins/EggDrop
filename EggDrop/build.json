@@ -1,0 +1,11 @@
+{
+     "android": {
+         "release": {
+             "keystore": "c:\\egg-drop-release.keystore",
+             "storePassword": "117158",
+             "alias": "seanB",
+             "password" : "117158",
+             "keystoreType": ""
+         }
+     }
+ }

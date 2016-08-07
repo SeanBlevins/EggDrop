@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<script src="cordova.js"></script>
+        <script src="js/zepto.min.js"></script>	
+        <script src="js/dat.gui.js"></script>	
+        <script src="js/phaser.min.js"></script>
+        <script src="js/screenutils.js"></script>
+        <script src="states/boot.js"></script>
+		<script src="states/preload.js"></script>
+		<script src="states/menu.js"></script>
+        <script src="states/howto.js"></script>
+		<script src="states/eggdrop.js"></script>
+		<script src="states/gameover.js"></script>
+    	<style>
+    		body{margin:0;padding:0;}
+    		canvas{transform:translateZ(0);}
+    	</style>
+		<script>
+		
+			$(document).ready(function () {
+				
+    			document.addEventListener('deviceready', deviceReady, false);
+
+			});
+
+			function deviceReady() {
+			    var screenDims = Utils.ScreenUtils.calculateScreenMetrics(320, 480);
+				
+			    var game = new Phaser.Game(screenDims.windowWidth, screenDims.windowHeight, Phaser.Canvas, "game");
+
+				console.log("!!!!!!!!!!!!!!! index");
+				
+				game.state.add("Boot",boot);
+				game.state.add("Preload", preload);				
+				game.state.add("Menu", menu);
+				game.state.add("HowTo", howto);
+				game.state.add("EggDrop",eggdrop);
+				game.state.add("GameOver",gameover);
+				game.state.start("Boot");
+			}
+		</script>
+    </head>
+    <body>
+    </body>
+</html>
